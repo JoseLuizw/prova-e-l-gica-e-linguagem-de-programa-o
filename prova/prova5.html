@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <form id="validationForm" onsubmit="return validateForm()">
+        <label for="nome">Nome (mais de 3 caracteres):</label>
+        <input type="text" id="nome" required><br><br>
+
+        <label for="idade">Idade (0-150):</label>
+        <input type="number" id="idade" min="0" max="150" required><br><br>
+
+        <label for="salario">Salário (maior que zero):</label>
+        <input type="number" id="salario" min="0.01" step="0.01" required><br><br>
+
+        <label for="sexo">Sexo (F/M):</label>
+        <select id="sexo" required>
+            <option value="">Selecione</option>
+            <option value="f">Feminino</option>
+            <option value="m">Masculino</option>
+        </select><br><br>
+
+        <label for="estado">Estado Civil:</label>
+        <select id="estado" required>
+            <option value="">Selecione</option>
+            <option value="s">Solteiro(a)</option>
+            <option value="c">Casado(a)</option>
+            <option value="v">Viúvo(a)</option>
+            <option value="d">Divorciado(a)</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        function validateForm() {
+            let nome = document.getElementById("nome").value;
+            if (nome.length <= 3) {
+                alert("Nome deve ter mais de 3 caracteres");
+                return false;
+            }
+            return true;
+        }
+    </script></form>
+</body>
+</html>

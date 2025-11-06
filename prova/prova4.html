@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+  <h2>Digite uma nota entre 0 e 10</h2>
+
+  <input type="number" id="grade" min="0" max="10" step="0.1" placeholder="Digite a nota">
+  <button onclick="getValidGrade()">Verificar</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    function getValidGrade() {
+      const gradeInput = document.getElementById("grade").value;
+      const grade = parseFloat(gradeInput);
+      const msg = document.getElementById("mensagem");
+
+      if (isNaN(grade) || grade < 0 || grade > 10) {
+        msg.textContent = " Valor inválido. Digite uma nota entre 0 e 10.";
+        msg.style.color = "red";
+      } else {
+        msg.textContent = " Nota válida: " + grade;
+        msg.style.color = "green";
+      }
+    }
+  </script>
+</body>
+</html>

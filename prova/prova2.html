@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+    <h2>Descubra o maior número</h2>
+
+    <label>Primeiro número: <input id="n1" type="number"></label><br><br>
+    <label>Segundo número: <input id="n2" type="number"></label><br><br>
+    <label>Terceiro número: <input id="n3" type="number"></label><br><br>
+
+    <button onclick="verMaior()">Ver maior número</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verMaior() {
+            let n = parseFloat(document.getElementById("n1").value);
+            let m = parseFloat(document.getElementById("n2").value);
+            let c = parseFloat(document.getElementById("n3").value);
+
+            let maior;
+
+            if (n > m && n > c) {
+                maior = n;
+            } else if (m > n && m > c) {
+                maior = m;
+            } else {
+                maior = c;
+            }
+
+            document.getElementById("resultado").textContent = "O maior número é: " + maior;
+        }
+    </script>
+</body>
+</html>

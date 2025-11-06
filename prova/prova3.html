@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <label>digite o salário: <input id="n1" type="number"></label><br><br>
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+function calcular() {
+    let salario = Number(document.getElementById('n1').value);
+    let percentual;
+    let aumento;
+    let novoSalario;
+
+    if (salario <= 280) {
+        percentual = 20;
+    } else if (salario <= 700) {
+        percentual = 15;
+    } else if (salario <= 1500) {
+        percentual = 10;
+    } else {
+        percentual = 5;
+    }
+
+    aumento = salario * (percentual/100);
+    novoSalario = salario + aumento;
+
+    document.getElementById('resultado').innerHTML = 
+        `Salário antes do reajuste: R$ ${salario.toFixed(2)}<br>
+        Percentual de aumento: ${percentual}%<br>
+        Valor do aumento: R$ ${aumento.toFixed(2)}<br>
+        Novo salário: R$ ${novoSalario.toFixed(2)}`;
+}
+</script>
+</body>
+
+</html>
